@@ -1,6 +1,6 @@
 # 设置app标题-----
 
-app_title <-'App Template';
+app_title <-'FAQ泛化生成器V1';
 
 
 # 设置3条消息框------
