@@ -6,11 +6,11 @@ menu_column <- tabItem(tabName = "column",
                                   fileInput('file_carType','请选择品牌车型泛化文件',placeholder = '请选择文件',buttonLabel = '浏览...'),
                                   mdl_ListChoose1('sheet_carType',label = '请选择页签',
                                                   choiceNames = list('固定内容','活动'),
-                                                  choiceValues = list('固定内容','活动')),
+                                                  choiceValues = list('固定内容','活动'),selected = '固定内容'),
                                   
                                   mdl_ListChoose1('txt_newCarType',label = '请选择车型',
                                                   choiceNames = list('极光揽胜','其他'),
-                                                  choiceValues = list('极光揽胜','其他'))
+                                                  choiceValues = list('极光揽胜','其他'),selected = '极光揽胜')
                                 ),
                                 box(
                                   title = "操作选项", width = NULL, solidHeader = TRUE, status = "primary",

@@ -28,7 +28,7 @@
    
    var_sheetName <-var_ListChoose1('sheet_carType')
    var_newCarType <- var_ListChoose1('txt_newCarType')
-   data_carType <- reactive({
+   data_carType <- eventReactive(input$preview_res_cartype,{
       file <- input$file_carType$datapath
       print(file)
       sheet_name <- var_sheetName()
