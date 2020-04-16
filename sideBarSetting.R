@@ -2,8 +2,8 @@ sidebarMenu <-sidebarMenu(
   
 
  menuItem("相似问泛化",tabName = "row",icon=icon('clock'))
- #,
- #menuItem("column",tabName = "column",icon=icon('history')),
+ ,
+ menuItem("品牌车型泛化",tabName = "column",icon=icon('history'))
  # 1.01 出差外出数据----
  #menuItem("book",tabName = "book",icon=icon('plane')),
  #menuItem("series",tabName = "series",icon=icon('car-side')),
