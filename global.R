@@ -1,5 +1,6 @@
 ## global.R ##
 # 加载R包-----
+options(warn=-1)
 enableBookmarking(store = "url")
 library(shiny);
 library(shinydashboard);
