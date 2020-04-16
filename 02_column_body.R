@@ -3,7 +3,7 @@ menu_column <- tabItem(tabName = "column",
                          column(width = 4,
                                 box(
                                   title = "选择文件", width = NULL, solidHeader = TRUE, status = "primary",
-                                  fileInput('file_carType','请选择文件'),
+                                  fileInput('file_carType','请选择品牌车型泛化文件',placeholder = '请选择文件',buttonLabel = '浏览...'),
                                   mdl_ListChoose1('sheet_carType',label = '请选择页签',
                                                   choiceNames = list('固定内容','活动'),
                                                   choiceValues = list('固定内容','活动')),
