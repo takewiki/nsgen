@@ -1,7 +1,7 @@
 # 设置app标题-----
 # 进一步完善
-
-app_title <-'FAQ泛化生成器V2.2';
+#
+app_title <-'FAQ泛化生成器V2.5';
 
 
 # 设置3条消息框------
@@ -20,5 +20,24 @@ msg <- list(
        )
 )
 
+
+# conn <- conn_rds('nsic')
+
+# 处理品牌数据
+getCarType <- function(){
+  conn <- conn_rds('nsic')
+  sql <- "select FBrandName,FCartypeName  from t_md_carType"
+  mydata  <- sql_select(conn,sql)
+  
+  
+  mydata_split <- split(mydata,mydata$FBrandName)
+  
+  mydata_res <- lapply(mydata_split,function(item){
+    cartype <- item$FCartypeName
+    res <- tsdo::vect_as_list(cartype)
+    return(res)
+  })
+  return(mydata_res)
+}
 
 

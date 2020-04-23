@@ -3,6 +3,18 @@
 #shinyserver start point----
  shinyServer(function(input, output,session) {
     
+    
+    output$sel_carType_placeHolder <- renderUI({
+       # mdl_ListChoose1('txt_newCarType',label = '请选择车型',
+       #                 choiceNames = list('极光揽胜','其他'),
+       #                 choiceValues = list('极光揽胜','其他'),selected = '极光揽胜')
+       
+       selectInput("txt_newCarType", "请选择车型:",
+                   getCarType(),selected = '发现运动版')
+       
+    })
+
+    
     #处理相似问-----
    
    var_file <- var_file('file_ques_like');
@@ -27,14 +39,14 @@
    #处理车型-------
    
    var_sheetName <-var_ListChoose1('sheet_carType')
-   var_newCarType <- var_ListChoose1('txt_newCarType')
+   #var_newCarType <- var_ListChoose1('txt_newCarType')
    data_carType <- eventReactive(input$preview_res_cartype,{
       file <- input$file_carType$datapath
       print(file)
       sheet_name <- var_sheetName()
-      newCarType <- var_newCarType()
+      newCarType <- input$txt_newCarType
       res <-  nsgen_cartype(file,sheet_name,newCarType)
-      print(res)
+      #print(res)
       return(res)
    })
    

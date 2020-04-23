@@ -2,6 +2,7 @@
 # 加载R包-----
 options(warn=-1)
 enableBookmarking(store = "url")
+options(shiny.sanitize.errors = FALSE)
 library(shiny);
 library(shinydashboard);
 library(tsda);
